@@ -1,0 +1,24 @@
+nav .logo {
+  width: 4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 3rem;
+  padding-top: 1rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
