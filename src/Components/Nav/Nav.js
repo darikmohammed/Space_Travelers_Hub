@@ -1,24 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logoImage from '../../img/planet.png';
 import './Nav.css';
 
 const Nav = () => (
   <>
     <nav className="nav-menus">
-      <Link to="/">
+      <NavLink to="/">
         <img src={logoImage} alt="logo" className="logo" />
-      </Link>
+      </NavLink>
       <ul>
-        <Link to="/">
+        <NavLink to="/">
           <li>Rockets</li>
-        </Link>
-        <Link to="/missions">
+        </NavLink>
+        <NavLink to="/missions">
           <li>Missions</li>
-        </Link>
-        <Link to="/myprofile">
+        </NavLink>
+        <NavLink to="/myprofile">
           <li>My Profile</li>
-        </Link>
+        </NavLink>
       </ul>
     </nav>
   </>
