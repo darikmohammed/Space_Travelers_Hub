@@ -1,14 +1,17 @@
-// missions.js
+import { createSlice } from '@reduxjs/toolkit/dist/createSlice';
 
 const initialState = [];
 
-// Actions
+const missionSlice = createSlice({
+  name: 'Missions',
+  initialState,
+  reducers: {
+    getMissions: (state, action) => ({
+      missions: [...state.missions, ...action.payload],
+    }),
+  },
+});
 
-// Reducer
-export const missionsReducer = (state = initialState, action) => {
-switch (action.type){
-    default: return state;
-}
-}
+export const { getMissions } = missionSlice.actions;
 
-// Action Creators
+export default missionSlice.reducer;
