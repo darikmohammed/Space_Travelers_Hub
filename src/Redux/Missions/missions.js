@@ -1,7 +1,14 @@
 // missions.js
 
-//Actions
+const initialState = [];
 
-//Reducer
+// Actions
 
-//Action Creators
+// Reducer
+export const missionsReducer = (state = initialState, action) => {
+switch (action.type){
+    default: return state;
+}
+}
+
+// Action Creators
