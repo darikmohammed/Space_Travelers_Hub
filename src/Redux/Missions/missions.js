@@ -15,3 +15,4 @@ const missionSlice = createSlice({
 export const { getMissions } = missionSlice.actions;
 
 export default missionSlice.reducer;
+
