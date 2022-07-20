@@ -10,9 +10,15 @@ const fetchRockets = createSlice({
   name: 'Rockets',
   initialState,
   reducers: {
-    getRockets: (state, action) => ({
+    updateRocketReservation: (state, action) => ({
       ...state,
-      rockets: [...state.rockets, ...action.payload],
+      rockets: {
+        ...state.rockets,
+        [action.payload]: {
+          ...state.rockets[action.payload],
+          reserved: !state.rockets[action.payload].reserved,
+        },
+      },
     }),
   },
   extraReducers: {
@@ -32,6 +38,6 @@ const fetchRockets = createSlice({
   },
 });
 
-export const { getRockets } = fetchRockets.actions;
+export const { updateRocketReservation } = fetchRockets.actions;
 
 export default fetchRockets.reducer;
