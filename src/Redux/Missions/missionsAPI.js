@@ -16,17 +16,4 @@ const getMissionsData = createAsyncThunk('Missions/getMissionsData',
     return dataMissions;
   });
 
-/* const fetchData = async () => {
-  const response = await axios.get(URL_MISSIONS);
-  const dataMissions = response.data.map((mission) => (
-    {
-      mission_id: mission.mission_id,
-      mission_name: mission.mission_name,
-      description: mission.description,
-    }
-  ));
-  console.log('response', dataMissions);
-  return dataMissions;
-};
- */
 export default getMissionsData;
