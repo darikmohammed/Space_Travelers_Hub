@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit/dist/createSlice';
+import { createSlice } from '@reduxjs/toolkit';
 import getMissionsData from './missionsAPI';
 
 const initialState = {
@@ -24,7 +24,6 @@ const missionSlice = createSlice({
       ...state,
       status: 'failed',
     }),
-
   },
 });
 

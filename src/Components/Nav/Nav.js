@@ -6,9 +6,11 @@ import './Nav.css';
 const Nav = () => (
   <>
     <nav className="nav-menus">
-      <NavLink to="/">
+      <NavLink to="/" className="logo-link">
         <img src={logoImage} alt="logo" className="logo" />
+        <h2>Space Travelers&apos; Hub</h2>
       </NavLink>
+
       <ul>
         <NavLink to="/">
           <li>Rockets</li>
