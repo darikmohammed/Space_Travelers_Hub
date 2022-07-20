@@ -15,6 +15,10 @@ const missionSlice = createSlice({
     }),
   },
   extraReducers: {
+    [getMissionsData.pending]: (state) => ({
+      ...state,
+      status: 'loading',
+    }),
     [getMissionsData.fulfilled]: (state, action) => ({
       ...state,
       missions: action.payload,
