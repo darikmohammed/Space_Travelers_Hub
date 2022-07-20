@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import getMissionsData from './missionsAPI';
 
-const initialState = [];
+const initialState = {
+  missions: [],
+  status: 'loading',
+};
 
 const missionSlice = createSlice({
   name: 'Missions',
@@ -8,6 +12,17 @@ const missionSlice = createSlice({
   reducers: {
     getMissions: (state, action) => ({
       missions: [...state.missions, ...action.payload],
+    }),
+  },
+  extraReducers: {
+    [getMissionsData.fulfilled]: (state, action) => ({
+      ...state,
+      missions: action.payload,
+      status: 'uploaded',
+    }),
+    [getMissionsData.rejected]: (state) => ({
+      ...state,
+      status: 'failed',
     }),
   },
 });
