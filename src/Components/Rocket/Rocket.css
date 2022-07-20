@@ -1,0 +1,10 @@
+/* Mobile */
+.rocket{
+    display: flex;
+    flex-direction: ;
+}
+
+/* Desktop */
+@media (min-width: 768px){
+
+}
