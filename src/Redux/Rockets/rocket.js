@@ -16,14 +16,17 @@ const fetchRockets = createSlice({
     }),
   },
   extraReducers: {
+    [getRocketDatas.pending]: (state) => ({
+      ...state,
+      status: 'loading',
+    }),
     [getRocketDatas.fulfilled]: (state, action) => ({
       ...state,
       rockets: action.payload,
       status: 'uploaded',
     }),
-    [getRocketDatas.rejected]: (state, action) => ({
+    [getRocketDatas.rejected]: (state) => ({
       ...state,
-      rockets: action.payload,
       status: 'rejected',
     }),
   },

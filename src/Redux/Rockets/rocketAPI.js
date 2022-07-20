@@ -14,11 +14,13 @@ const factorResponse = (datas) => {
   return arr;
 };
 
-const getRocketDatas = createAsyncThunk('get/getRocketDatas', async () => {
+const getRocketDatas = createAsyncThunk(
+  'rockets/getRocketDatas',
   axios.get('https://api.spacexdata.com/v3/rockets').then((response) => {
-    const data = factorResponse(response);
+    const data = factorResponse(response.data);
+    console.log(data);
     return data;
-  });
-});
+  }),
+);
 
 export default getRocketDatas;

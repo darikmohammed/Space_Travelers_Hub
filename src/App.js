@@ -1,11 +1,20 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Rockets from './routes/Rockets';
 import Missions from './routes/Missions';
 import MyProfile from './routes/MyProfile';
 import Nav from './Components/Nav/Nav';
+import getRocketDatas from './Redux/Rockets/rocketAPI';
 
 function App() {
+  const dispatch = useDispatch();
+  const storeRockets = useSelector((state) => state.rockets);
+  console.log(storeRockets);
+  useEffect(() => {
+    dispatch(getRocketDatas());
+  }, []);
   return (
     <div className="App">
       <Nav />
