@@ -5,7 +5,6 @@ import './Rocket.css';
 function Rocket({
   name, description, reserved, image, id,
 }) {
-  console.log(id);
   const hundleReserve = (id) => {
     console.log(id);
   };
@@ -18,7 +17,11 @@ function Rocket({
           {reserved ? <span className="reserved-span">Reserved</span> : ''}
           {description}
         </p>
-        <button type="button" onClick={hundleReserve(id)}>
+        <button
+          type="button"
+          onClick={hundleReserve(id)}
+          className={reserved ? 'cancle-btn' : 'btn'}
+        >
           {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
         </button>
       </div>
