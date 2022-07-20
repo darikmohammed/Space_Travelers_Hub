@@ -26,3 +26,9 @@ nav ul {
 .active {
   text-decoration: underline;
 }
+
+.logo-link {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+}

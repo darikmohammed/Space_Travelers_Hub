@@ -2,15 +2,17 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const factorResponse = (datas) => {
-  const arr = [];
+  let arr = {};
   datas.forEach((data) => {
-    arr.push({
-      id: data.id,
-      name: data.rocket_name,
-      description: data.description,
-      image: data.flickr_images[0],
-      reserved: false,
-    });
+    arr = {
+      ...arr,
+      [data.id]: {
+        name: data.rocket_name,
+        description: data.description,
+        image: data.flickr_images[0],
+        reserved: false,
+      },
+    };
   });
   return arr;
 };
