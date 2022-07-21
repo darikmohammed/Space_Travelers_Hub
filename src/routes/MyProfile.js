@@ -24,9 +24,9 @@ const MyProfile = () => {
         <div className="view-rockets">
           {reservedRocket.length ? (
             reservedRocket.map((rocket) => (
-              <tr key={rocket.id}>
-                <td>{rocket.name}</td>
-              </tr>
+              <p className="reserved-p" key={rocket.id}>
+                {rocket.name}
+              </p>
             ))
           ) : (
             <p className="no-reserved">No Rockets Reserved</p>
