@@ -29,7 +29,12 @@ const MyProfile = () => {
         <ul className="view-missions">
           { missionJoined.length ? (
             missionJoined.map((missions) => (
-              <li key={missions.mission_id}>{missions.mission_name}</li>
+              <li
+                className="reserved-p"
+                key={missions.mission_id}
+              >
+                {missions.mission_name}
+              </li>
             ))
           ) : <li>No Missions Joinned</li>}
         </ul>
