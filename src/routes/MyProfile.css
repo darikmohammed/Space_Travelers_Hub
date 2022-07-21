@@ -1,0 +1,29 @@
+.profile-display {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1rem 3rem;
+  gap: 1rem;
+}
+
+.my-rocket {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+tr {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+
+.view-rockets {
+  display: flex;
+  flex-direction: column;
+}
+/* Desktop */
+@media (min-width: 768px) {
+  .profile-display {
+    grid-template-columns: 1fr 1fr;
+  }
+}
