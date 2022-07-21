@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Mission.css';
 import { useDispatch } from 'react-redux';
-import { memberMission } from '../../Redux/Missions/missions';
+import { memberLeaveMission, memberMission } from '../../Redux/Missions/missions';
 
 const Missions = ({
   id, name, description, member,
@@ -19,15 +19,27 @@ const Missions = ({
         }
       </div>
       <div className="col col-4">
-
-        <button
-          onClick={() => dispatch(memberMission(id))}
-          className="button button-primary"
-          type="button"
-        >
-          Join Mission
-        </button>
-
+        {
+          member
+            ? (
+              <button
+                onClick={() => dispatch(memberLeaveMission(id))}
+                className="button button-danger"
+                type="button"
+              >
+                Leave Mission
+              </button>
+            )
+            : (
+              <button
+                onClick={() => dispatch(memberMission(id))}
+                className="button button-primary"
+                type="button"
+              >
+                Join Mission
+              </button>
+            )
+        }
       </div>
     </li>
   );
