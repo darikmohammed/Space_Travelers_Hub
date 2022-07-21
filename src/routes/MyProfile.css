@@ -21,6 +21,7 @@ tr {
   display: flex;
   flex-direction: column;
 }
+
 /* Desktop */
 @media (min-width: 768px) {
   .profile-display {
