@@ -29,11 +29,15 @@
   padding: 0.2rem 0.2rem;
   font-size: 0.5rem;
   font-weight: bold;
+  color: #fff;
 }
 
 .badge-inactive {
   background-color: #808080;
-  color: #fff;
+}
+
+.badge-active {
+  background-color: #39c0ed;
 }
 
 .button {
@@ -49,6 +53,11 @@
 .button-primary {
   border: 1px solid #808080;
   color: #808080;
+}
+
+.button-danger {
+  border: 1px solid #f93154;
+  color: #f93154;
 }
 
 .col {
