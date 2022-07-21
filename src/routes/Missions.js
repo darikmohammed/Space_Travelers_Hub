@@ -5,6 +5,7 @@ import './Missions.css';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions.missions);
+  console.log(missions)
 
   return (
     <div className="mission__container">
@@ -22,6 +23,7 @@ const Missions = () => {
             id={mission.mission_id}
             name={mission.mission_name}
             description={mission.description}
+            member={mission.member}
           />
         ))}
 

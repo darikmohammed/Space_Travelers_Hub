@@ -11,6 +11,7 @@ const getMissionsData = createAsyncThunk('Missions/getMissionsData',
         mission_id: mission.mission_id,
         mission_name: mission.mission_name,
         description: mission.description,
+        member: false,
       }
     ));
     return dataMissions;

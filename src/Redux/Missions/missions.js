@@ -9,7 +9,20 @@ const initialState = {
 const missionSlice = createSlice({
   name: 'Missions',
   initialState,
-
+  reducers: {
+    memberMission: (state,action)=>{
+        return {
+            ...state,
+            missions:{
+                ...state.missions,
+                [action.payload]:{
+                ...state.missions[action.payload],
+                member: !state.missions[action.payload].member
+                }
+            }
+        }
+    }
+  },
   extraReducers: {
     [getMissionsData.pending]: (state) => ({
       ...state,
@@ -27,6 +40,6 @@ const missionSlice = createSlice({
   },
 });
 
-export const { getMissions } = missionSlice.actions;
+export const { memberMission } = missionSlice.actions;
 
 export default missionSlice.reducer;
