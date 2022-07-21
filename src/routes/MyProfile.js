@@ -20,8 +20,7 @@ const MyProfile = () => {
       return null;
     } return { mission };
   });
-  console.log('My profile', missions);
-  console.log('Profile', missionJoined);
+
   return (
     <div className="profile-display">
       <div className="my-mission">
