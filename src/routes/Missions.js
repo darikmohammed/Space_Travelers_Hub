@@ -1,24 +1,20 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Mission from '../Components/Missions/Mission';
-import getMissionsData from '../Redux/Missions/missionsAPI';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions.missions);
-  console.log('missions', missions);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    console.log(dispatch(getMissionsData()));
-  }, []);
 
-  const missionsKeys = Object.keys(missions);
-  console.log('missionkey', missionsKeys);
   return (
     <div>
-      <h2>
-        Missions
-      </h2>
-      <Mission />
+      {missions.map((mission) => (
+        <Mission
+          key={mission.mission_id}
+          id={mission.mission_id}
+          name={mission.mission_name}
+          description={mission.description}
+        />
+      ))}
     </div>
   );
 };
