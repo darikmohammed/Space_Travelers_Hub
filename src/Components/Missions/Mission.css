@@ -1,0 +1,122 @@
+
+.mission__table > li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mission__table-header{
+    font-weight: bold;
+    border-top: 1px solid #c8c3c380;
+}
+
+
+.mission__table-row:nth-child(even) {
+    background-color: #e6e1e180;
+  }
+
+  .table-name{
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .table-description{
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  .badge {
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.2rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+  }
+
+  .badge-inactive{
+    background-color: #808080;
+    color: #fff;
+  }
+
+  .button{
+    border: none;
+    background-color: transparent;
+    border-radius: 0.2rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .button-primary{
+    border:1px solid #808080;
+    color: #808080;
+  }
+
+.col{
+    border-right: 0.5px solid #c8c3c380;
+    border-bottom: 0.5px solid #c8c3c380;
+    padding: 0.2rem 0.2rem;
+    display: flex;
+    justify-content: left;
+}
+
+.col-1 {
+    flex-basis: 20%;
+    border-left: 1px solid #c8c3c380;
+  }
+  .col-2 {
+    flex-basis: 40%;
+  }
+  .col-3 {
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .col-4 {
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Desktop */
+@media (min-width: 768px) {
+    .table-name{
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: left;
+      }
+    
+      .table-description{
+        font-size: 1rem;
+        text-align: left;
+      }
+
+      .badge {
+        font-size: 0.7rem;
+      }
+
+      .button{
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      .col{
+        padding: 0.5rem 1rem;
+    }
+
+    .col-1 {
+        flex-basis: 15%;
+      }
+      .col-2 {
+        flex-basis: 61%;
+      }
+      .col-3 {
+        flex-basis: 12%;
+      }
+      .col-4 {
+        flex-basis: 12%;
+      }
+  }
+  
