@@ -14,10 +14,25 @@ const MyProfile = () => {
       });
     }
   });
+  const missions = useSelector((state) => state.missions.missions);
+  const missionJoined = missions.filter((mission) => {
+    if (mission.member !== true) {
+      return null;
+    } return { mission };
+  });
+  console.log('My profile', missions);
+  console.log('Profile', missionJoined);
   return (
     <div className="profile-display">
       <div className="my-mission">
         <h2>My Missions</h2>
+        <ul className="view-missions">
+          { missionJoined.length ? (
+            missionJoined.map((missions) => (
+              <li key={missions.mission_id}>{missions.mission_name}</li>
+            ))
+          ) : <li>No Missions Joinned</li>}
+        </ul>
       </div>
       <div className="my-rocket">
         <h2>My Rockets</h2>
