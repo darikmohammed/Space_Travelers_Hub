@@ -5,7 +5,7 @@ import './Missions.css';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions.missions);
-  console.log(missions)
+  console.log(missions);
 
   return (
     <div className="mission__container">
