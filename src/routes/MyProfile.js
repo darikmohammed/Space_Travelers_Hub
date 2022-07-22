@@ -18,7 +18,8 @@ const MyProfile = () => {
   const missionJoined = missions.filter((mission) => {
     if (mission.member !== true) {
       return null;
-    } return { mission };
+    }
+    return { mission };
   });
 
   return (
@@ -26,16 +27,15 @@ const MyProfile = () => {
       <div className="my-mission">
         <h2>My Missions</h2>
         <ul className="view-missions">
-          { missionJoined.length ? (
+          {missionJoined.length ? (
             missionJoined.map((missions) => (
-              <li
-                className="reserved-p"
-                key={missions.mission_id}
-              >
+              <li className="reserved-p" key={missions.mission_id}>
                 {missions.mission_name}
               </li>
             ))
-          ) : <li>No Missions Joinned</li>}
+          ) : (
+            <li>No Missions Joinned</li>
+          )}
         </ul>
       </div>
       <div className="my-rocket">
