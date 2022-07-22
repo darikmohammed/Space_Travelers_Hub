@@ -1,10 +1,18 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Mission from '../Components/Missions/Mission';
 import './Missions.css';
+import getMissionsData from '../Redux/Missions/missionsAPI';
 
 const Missions = () => {
+  const fetched = useSelector((state) => state.missions.status);
   const missions = useSelector((state) => state.missions.missions);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (fetched !== 'uploaded') {
+      dispatch(getMissionsData());
+    }
+  }, []);
 
   return (
     <div className="mission__container">
@@ -25,7 +33,6 @@ const Missions = () => {
             member={mission.member}
           />
         ))}
-
       </ul>
     </div>
   );

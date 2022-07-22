@@ -7,13 +7,11 @@ import Missions from './routes/Missions';
 import MyProfile from './routes/MyProfile';
 import Nav from './Components/Nav/Nav';
 import getRocketDatas from './Redux/Rockets/rocketAPI';
-import getMissionsData from './Redux/Missions/missionsAPI';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRocketDatas());
-    dispatch(getMissionsData());
   }, []);
   return (
     <div className="App">
