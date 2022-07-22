@@ -55,19 +55,16 @@ nav .logo {
 
 .navigation-menu ul {
   display: none;
-}
-
-.navigation-menu.expanded ul {
-  display: flex;
-}
-
-.navigation-menu ul {
   position: absolute;
   top: 60px;
   left: 0;
   flex-direction: column;
   width: 100%;
   background-color: white;
+}
+
+.navigation-menu.expanded ul {
+  display: flex;
 }
 
 .navigation-menu ul li {
@@ -96,7 +93,6 @@ nav .logo {
   nav .logo {
     width: 3rem;
   }
-
 
   .nav-menu {
     display: flex;
