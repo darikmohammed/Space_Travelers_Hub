@@ -4,16 +4,8 @@ import './MyProfile.css';
 
 const MyProfile = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
-  const rocketsKey = Object.keys(rockets);
-  const reservedRocket = [];
-  rocketsKey.forEach((rocketId) => {
-    if (rockets[rocketId].reserved) {
-      reservedRocket.push({
-        id: rocketId,
-        name: rockets[rocketId].name,
-      });
-    }
-  });
+  const rocketsKey = Object.entries(rockets);
+  const reservedRocket = rocketsKey.filter((rockets) => rockets[1].reserved);
   const missions = useSelector((state) => state.missions.missions);
   const missionJoined = missions.filter((mission) => {
     if (mission.member !== true) {
@@ -43,8 +35,8 @@ const MyProfile = () => {
         <div className="view-rockets">
           {reservedRocket.length ? (
             reservedRocket.map((rocket) => (
-              <p className="reserved-p" key={rocket.id}>
-                {rocket.name}
+              <p className="reserved-p" key={rocket[0]}>
+                {rocket[1].name}
               </p>
             ))
           ) : (
